@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "Dictionary-KaanOzge",
-            targets: ["Dictionary"]),
+            targets: ["Dictionary-KaanOzge"]),
     ],
     dependencies: [
         .package(name: "Math", url: "https://github.com/StarlangSoftware/Math-Swift.git", .exact("1.0.3")),
@@ -22,11 +22,11 @@ let package = Package(
             dependencies: ["Math"],
             resources: [
             .copy("Sources/Corpus/mixedcase.txt"),.copy("Sources/Corpus/lowercase.txt"),
-                .copy("Sources/Corpus/mixedcase.txt"),
-                .copy("Sources/Corpus/turkish_dictionary.txt"),
-                .copy("Sources/Corpus/turkish_misspellings.txt")]),
+                .copy("Sources/Dictionary/mixedcase.txt"),
+                .copy("Sources/Dictionary/turkish_dictionary.txt"),
+                .copy("Sources/Dictionary/turkish_misspellings.txt")]),
         .testTarget(
             name: "DictionaryTests",
-            dependencies: ["Dictionary"]),
+            dependencies: ["Dictionary-KaanOzge"]),
     ]
 )

@@ -19,7 +19,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "Dictionary",
-            dependencies: ["Math"]),
+            dependencies: ["Math"],
+            resources: [
+            .copy("mixedcase.txt"),.copy("lowercase.txt"),
+                .copy("mixedcase.txt"),
+                .copy("turkish_dictionary.txt"),
+                .copy("turkish_misspellings.txt")]),
         .testTarget(
             name: "DictionaryTests",
             dependencies: ["Dictionary"]),
